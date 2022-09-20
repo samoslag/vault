@@ -1,0 +1,25 @@
+.error-popup .popup__container {
+    max-width: 550px;
+    padding-bottom: 100px;
+}
+
+.error-popup__content p {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 15px;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.error-popup__content p + p {
+    margin-top: 15px;
+}
+
+.error-popup__content p:last-child {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+@media only screen and (max-height: 450px) {
+    .error-popup .popup__container {
+        padding-bottom: 50px;
+    }
+}

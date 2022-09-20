@@ -1,0 +1,39 @@
+.vault__empty-notice {
+    text-align: center;
+    width: 100%;
+    padding: 25px;
+    color: rgba(255, 255, 255, 0.25);
+    font-size: 16px;
+}
+
+.vault__empty-notice p {
+    margin: 0;
+    padding: 0;
+}
+
+.vault-enter-active,
+.vault-leave-active {
+    transition: all 0.3s;
+}
+
+.vault-enter-active .header,
+.vault-leave-active .header {
+    transition: all 0.3s;
+}
+
+.vault-enter .header,
+.vault-leave-to .header {
+    opacity: 0;
+}
+
+.vault-enter-active .list,
+.vault-leave-active .list {
+    transition: all 0.3s;
+    overflow: hidden;
+    max-height: 100vh;
+}
+
+.vault-enter .list,
+.vault-leave-to .list {
+    opacity: 0;
+}

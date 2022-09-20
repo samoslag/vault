@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "Default";
+  src: url("../fonts/Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Default";
+  src: url("../fonts/Medium.woff2") format("woff2");
+  font-weight: 500;
+}
+
+* {
+  font-family: "Default", sans-serif;
+}

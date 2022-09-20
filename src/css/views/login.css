@@ -1,0 +1,139 @@
+.login {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background-color: #131517;
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    position: relative;
+}
+
+.login__main-content {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 340px;
+    padding-bottom: 50px;
+}
+
+.login__logo {
+    width: 100%;
+    max-width: 298px;
+    height: 74px;
+    background-image: url(../../img/logo.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: -8px;
+    margin-bottom: 20px;
+}
+
+.login__password {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.login__password .input__error {
+    display: none;
+}
+
+.button.login__cta-btn {
+    width: 100%;
+}
+
+.login__reset-btn {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+    padding: 10px;
+    position: absolute;
+    bottom: 15px;
+    cursor: pointer;
+}
+
+.login__reset-btn svg {
+    width: 14px;
+    fill: rgba(255, 255, 255, 0.12);
+    margin-right: 6px;
+    transition: all 0.18s;
+}
+
+.login__reset-btn span {
+    color: rgba(255, 255, 255, 0.15);
+    font-size: 15px;
+    transition: all 0.18s;
+}
+
+.login__reset-btn:hover {
+    cursor: pointer;
+}
+
+.login__reset-btn:hover svg {
+    fill: #e50914;
+}
+
+.login__reset-btn:hover span {
+    color: whitesmoke;
+}
+
+.login__reset-btn:active span {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.login__author {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    padding: 5px;
+    cursor: default;
+    color: transparent;
+    user-select: none;
+    font-size: 14px;
+    transition: all 0.18s;
+}
+
+.login__author:hover {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.login-enter-active,
+.login-leave-active {
+    position: fixed;
+    z-index: 11;
+    top: 0;
+    left: 0;
+    transition: all 0.3s;
+}
+
+.login-enter,
+.login-leave-to {
+    opacity: 0;
+    transform: scale(1.05);
+}
+
+@media only screen and (max-width: 600px) {
+    .login {
+        padding: 20px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .login__author {
+        display: none;
+    }
+}
+
+@media only screen and (max-height: 400px) {
+    .login__main-content {
+        padding-bottom: 35px;
+    }
+}

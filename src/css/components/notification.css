@@ -1,0 +1,148 @@
+.notification__wrapper {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+    width: 250px;
+    max-width: calc(100% - 40px);
+}
+
+.notification {
+    background-color: #2b2d2f;
+    padding: 0 15px 0 17px;
+    height: 62px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: all 0.18s;
+}
+
+.notification > * {
+    pointer-events: none;
+}
+
+.notification:hover {
+    background-color: #2f3234;
+}
+
+.notification:active {
+    background-color: #2b2d2f;
+}
+
+.notification__icon {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    min-width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.125);
+}
+
+.notification__icon svg {
+    width: 100%;
+    max-width: 16px;
+    max-height: 14px;
+    fill: white;
+}
+
+.notification__icon--lock svg {
+    transform: translateY(-1px);
+}
+
+.notification__content {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    user-select: none;
+    max-width: 100%;
+}
+
+.notification__icon + .notification__content {
+    padding-left: 15px;
+    max-width: calc(100% - 32px);
+}
+
+.notification__title {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 13px;
+    line-height: 15px;
+    text-align: left;
+    font-weight: 400;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.notification__text {
+    color: white;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: left;
+    font-weight: 400;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.notification__title + .notification__text {
+    margin-bottom: 1px;
+}
+
+.notification--success:hover {
+    background-color: #04a337;
+}
+
+.notification--success,
+.notification--success:active {
+    background-color: #069333;
+}
+
+.notification--success .notification__icon {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.notification--success .notification__title {
+    color: #baffc5;
+}
+
+.notification--error:hover {
+    background-color: #ed2323;
+}
+
+.notification--error,
+.notification--error:active {
+    background-color: #d42121;
+}
+
+.notification--error .notification__icon {
+    background-color: rgba(255, 255, 255, 0.225);
+}
+
+.notification--error .notification__title {
+    color: #ffbcbc;
+}
+
+.notification__wrapper {
+    transition: all 0.4s;
+}
+
+.notification-enter {
+    opacity: 0;
+    transform: translateX(150px);
+}
+
+.notification-leave-to {
+    opacity: 0;
+    transform: translateX(300px);
+}

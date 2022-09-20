@@ -1,0 +1,461 @@
+.list {
+    width: 100%;
+    padding: 88.5px 30px 0 30px;
+    max-width: 1260px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.list-item__wrapper {
+    width: 100%;
+    position: relative;
+    padding: 7.5px 0;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.25s ease-out, opacity 0.13s ease-out, width 0s, padding 0s;
+}
+
+.list-item__wrapper:last-child {
+    padding-bottom: 30px;
+}
+
+.list-item__add-section {
+    position: absolute;
+    width: 100%;
+    height: 35px;
+    top: -18px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-item__add-btn {
+    background: transparent;
+    border: none;
+    background-color: #212325;
+    border-radius: 50%;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0);
+    opacity: 0;
+    transition: all 0.25s;
+}
+
+.list-item__wrapper:first-child .list-item__add-btn {
+    position: relative;
+    top: 8px;
+}
+
+.list-item__add-btn svg {
+    fill: rgba(255, 255, 255, 0.55);
+    width: 12px;
+    height: 14px;
+    transition: all 0.25s;
+}
+
+.list-item__add-section:hover .list-item__add-btn {
+    transform: none;
+    opacity: 1;
+    animation: list-add-btn-appear 0.2s 0.2s backwards;
+}
+
+@keyframes list-add-btn-appear {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.list-item__add-btn:hover svg {
+    fill: rgba(255, 255, 255, 0.75);
+}
+
+.list-item__add-btn:hover {
+    background-color: #303133;
+}
+
+.list-item__add-btn:active {
+    transform: scale(0.85) !important;
+}
+
+.list-item {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 25px 30px;
+    position: relative;
+    background-color: rgba(25,27,29,0.8);
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.list-item__main {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow: hidden;
+}
+
+.list-item__title {
+    font-size: 21px;
+    line-height: 24px;
+    color: white;
+    font-weight: 500;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.list-item__info {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 8px;
+    padding-bottom: 4px;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.list__info-item {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 16px;
+    font-weight: 400;
+    cursor: default;
+    max-width: 100%;
+}
+
+.list__info-item + .list__info-item {
+    margin-top: 7px;
+}
+
+.list__info-item svg {
+    fill: rgba(255, 255, 255, 0.25);
+    height: 16px;
+    width: 16px;
+    min-width: 16px;
+    transition: all 0.15s;
+}
+
+.list__info-item span {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 0.15s;
+}
+
+.list__info-item svg + span {
+    margin-left: 10px;
+}
+
+.list__info-item:focus {
+    cursor: initial;
+}
+.list__info-item:hover svg,
+.list__info-item:focus svg {
+    fill: rgba(255, 255, 255, 0.4);
+}
+
+.list__info-item:hover span,
+.list__info-item:focus span {
+    color: white;
+}
+
+.list-item__note {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+    margin: 6px 0 0 0;
+    padding-bottom: 3px;
+    max-width: 500px;
+    line-height: 1.4;
+    white-space: pre-line;
+    word-break: break-word;
+}
+
+.list-item__note a {
+    color: #ff2828;
+    transition: all 0.15s;
+}
+
+.list-item__note a:hover {
+    text-decoration: underline;
+}
+
+.list-item__note a:active {
+    color: #89050c;
+}
+
+.list-item__note strong {
+    font-weight: 500;
+}
+
+.list-item__note i {
+    font-style: italic;
+}
+
+.list-item__note em {
+    font-style: normal;
+    font-size: 16px;
+}
+
+.list-item__note small {
+    font-size: 12px;
+}
+
+.list-item__note b {
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.list-item__note mark {
+    color: white;
+    background-color: rgba(229, 9, 20, 0.75);
+}
+
+.list-item__note del {
+    text-decoration: line-through;
+    color: rgba(255, 255, 255, 0.25);
+}
+
+.list-item__note ins {
+    text-decoration: underline;
+}
+
+.list-item__note sup {
+    font-style: 12px;
+    vertical-align: super;
+}
+
+.list-item__note sub {
+    font-style: 12px;
+    vertical-align: sub;
+}
+
+.list-item__hidden-info {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.list-item__password {
+    font-size: 17px;
+    color: white;
+    font-weight: 400;
+    text-align: right;
+    padding: 6px 13px;
+    min-height: 32px;
+    transition: all 0.15s;
+    border-radius: 3px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    overflow: hidden;
+}
+
+.list-item__password span {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    animation: password-appear 0.1s ease-out;
+    white-space: nowrap;
+}
+
+@keyframes password-appear {
+    from {
+        color: #e50914;
+    }
+    to {
+        color: white;
+    }
+}
+
+.list-item__hidden-password {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.list-item__hidden-password svg {
+    fill: white;
+    width: 7px;
+    min-width: 7px;
+    transition: all 0.18s;
+}
+
+.list-item__password:hover {
+    cursor: pointer;
+}
+
+.list-item__password:hover .list-item__hidden-password svg {
+    fill: #e50914;
+}
+
+.list-item__password:focus {
+    cursor: text;
+    background-color: transparent;
+    transition: none;
+}
+
+.list-item__hidden-password svg + svg {
+    margin-left: 2px;
+}
+
+.list-item__hidden-info > .button {
+    margin-left: 10px;
+}
+
+.list-item__hidden-info .list-item__copy--copied {
+    background-color: #02b23a;
+    transition-timing-function: linear;
+}
+
+.list-item__hidden-info .list-item__copy--copied svg {
+    height: 14px;
+}
+
+.list-item__hidden-info .list-item__copy--copied .button__icon + span {
+    margin-left: 6px;
+}
+
+.list-item__more {
+    padding: 0;
+    width: 31px;
+    min-width: 31px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-item__more svg {
+    height: 18px;
+    width: 5px;
+}
+
+.list-item__more--active {
+    background-color: rgba(63,65,67,0.8) !important;
+}
+
+.list-item__dropdown {
+    align-self: flex-start;
+}
+
+.list-item__dropdown .dropdown__items {
+    margin-left: 10px;
+}
+
+.list-item__dropdown .list-item__edit-btn .button__icon svg {
+    transform: translateX(1px);
+}
+
+.list-item__dropdown .list-item__move-btn .button__icon svg {
+    height: 18px;
+    width: 17px;
+    transform: translateX(-1px);
+}
+
+.list-item-enter-active,
+.list-item-leave-active {
+    position: absolute;
+    width: calc(100% - 60px);
+}
+
+.list-item-enter,
+.list-item-leave-to {
+    opacity: 0;
+}
+
+@media only screen and (max-width: 1440px) {
+    .list-item__dropdown .dropdown__items {
+        right: 31px;
+        margin-left: 0;
+        margin-right: 10px;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .list-item__password {
+        max-width: 400px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .list-item__password {
+        max-width: 300px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .list-item__password {
+        max-width: 200px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .list {
+        padding: 78.5px 20px 0 20px;
+    }
+
+    .list-item {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 20px 23px;
+    }
+
+    .list-item__main {
+        max-width: 100%;
+    }
+
+    .list-item__hidden-info {
+        width: calc(100% + 15px);
+        margin-left: -12px;
+        margin-right: -3px;
+        margin-top: 10px;
+    }
+
+    .list-item__hidden-info > .button:nth-child(2) {
+        margin-left: auto;
+    }
+
+    .list-item__password {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .list-item__wrapper:last-child {
+        padding-bottom: 20px;
+    }
+
+    .list-item-enter-active,
+    .list-item-leave-active {
+        width: calc(100% - 40px);
+    }
+}

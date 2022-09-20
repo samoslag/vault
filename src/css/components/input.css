@@ -1,0 +1,216 @@
+.input {
+    position: relative;
+    display: flex;
+    flex-flow: column-reverse nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.input__wrapper {
+    width: 100%;
+    display: flex;
+    flex-flow: column-reverse nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+}
+
+.input__line {
+    width: 0;
+    height: 2px;
+    transition: all 0.25s ease-out;
+    background-color: #e50914;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.input__toggle-visible {
+    position: absolute;
+    border: none;
+    background-color: transparent;
+    padding: 0 14px;
+    width: 47px;
+    height: 39px;
+    top: 28px;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.input__toggle-visible svg {
+    width: 19px;
+    height: 17px;
+    fill: rgba(255, 255, 255, 0.25);
+    transition: all 0.15s;
+    animation: input-toggle-visible 0.15s;
+}
+
+@keyframes input-toggle-visible {
+    from {
+        transform: scale(0.85);
+        opacity: 0.85;
+    }
+    to {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+.input__toggle-visible:hover svg {
+    fill: rgba(255, 255, 255, 0.4);
+}
+
+.input__toggle-visible:active svg {
+    fill: rgba(255, 255, 255, 0.25);
+}
+
+.input__toggle-visible--active svg,
+.input__toggle-visible--active:hover svg {
+    fill: #ff2828;
+}
+
+.input__toggle-visible--active:active svg {
+    fill: #cc2020;
+}
+
+.input__icon {
+    position: absolute;
+    left: 15px;
+    bottom: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 39px;
+    width: 15px;
+    pointer-events: none;
+}
+
+.input__icon svg {
+    width: 15px;
+    height: 15px;
+    fill: rgba(255, 255, 255, 0.5);
+}
+
+.input__icon ~ .input__input {
+    padding-left: 42px;
+}
+
+.input:not(.input--active) .input__icon ~ .input__label {
+    pointer-events: none;
+    transform: translate(39px, 36px);
+    font-size: 17px;
+}
+
+.input__label {
+    font-size: 16px;
+    line-height: 17px;
+    color: rgba(255, 255, 255, 0.5);
+    padding: 3px;
+    margin-bottom: 5px;
+    cursor: default;
+    user-select: none;
+    transition: all 0.25s;
+}
+
+.input:not(.input--active) .input__label {
+    pointer-events: none;
+    transform: translate(12px, 36px);
+    font-size: 17px;
+}
+
+.input__input {
+    background-color: #1d1f21;
+    border-radius: 3px;
+    transition: all 0.2s;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    font-size: 17px;
+    line-height: 19px;
+    width: 100%;
+}
+
+.input__input::placeholder {
+    user-select: none;
+}
+
+textarea.input__input {
+    resize: vertical;
+    line-height: 23px;
+    min-height: 43px;
+}
+
+.input__input:hover {
+    background-color: #242629;
+}
+
+.input__input:focus {
+    background-color: transparent;
+}
+
+.input__input:focus ~ .input__line {
+    width: 100%;
+}
+
+.input__input:focus ~ .input__label {
+    color: whitesmoke;
+    transform: none !important;
+    font-size: 16px !important;
+}
+
+.input--password .input__input {
+    padding-right: 48px;
+}
+
+.input--error {
+    animation: input-error-shake 0.5s ease-out;
+}
+
+@keyframes input-error-shake {
+    0% {
+        transform: none;
+    }
+    20% {
+        transform: translateX(10px);
+    }
+    40% {
+        transform: translateX(-10px);
+    }
+    60% {
+        transform: translateX(5px);
+    }
+    80% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: none;
+    }
+}
+
+.input--error .input__input {
+    animation: input-error-color 3s ease-out;
+}
+
+.input--error .input__input:focus {
+    color: white !important;
+}
+
+@keyframes input-error-color {
+    0%, 90% {
+        color: #ff2828;
+    }
+}
+
+.input__error {
+    color: #ff2828;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 8px 0 0 4px;
+}

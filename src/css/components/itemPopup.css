@@ -1,0 +1,37 @@
+.item-popup__form > * + * {
+    margin-top: 20px;
+}
+
+.item-popup__container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.item-popup__container > * {
+    flex-grow: 1;
+}
+
+.item-popup__container > * + * {
+    margin-left: 25px;
+}
+
+.popup__content section + section.item-popup__bottom,
+.item-popup__bottom {
+    margin-top: 33px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.item-popup__bottom > * + * {
+    margin-left: 20px;
+}
+
+@media only screen and (max-width: 480px) {
+    .item-popup .popup__container {
+        padding-bottom: 35px;
+    }
+}
